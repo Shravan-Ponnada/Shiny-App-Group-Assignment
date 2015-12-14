@@ -5,10 +5,10 @@ shinyServer(function(input, output) {
   
   
   output$Plot <- renderPlot({
-    dat <<- read.csv(paste(input$List,".csv", sep = ''))
-    x <<- dat[[input$Data]]
-    dat2 <<- read.csv(paste(input$List2,".csv", sep = ''))
-    z <<- dat2[[input$Data]]
+    dat <- read.csv(paste(input$List,".csv", sep = ''))
+    x <- dat[[input$Data]]
+    dat2 <- read.csv(paste(input$List2,".csv", sep = ''))
+    z <- dat2[[input$Data]]
     y <- NULL
     a <- NULL
     
@@ -19,11 +19,11 @@ shinyServer(function(input, output) {
       a <- c(a, z[i]/z[i-1])
     }
     
-    y <<- log(y)
-    m <<- mean(y)
-    s <<- sd(y)
+    y <- log(y)
+    m <- mean(y)
+    s <- sd(y)
     
-    a <<- log(a)
+    a <- log(a)
 
     bins <- seq(min(y), max(y), length.out = input$Slider + 1)
     
