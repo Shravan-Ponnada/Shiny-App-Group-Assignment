@@ -15,7 +15,18 @@ shinyUI(fluidPage(
                   max = 50,
                   value = 30),
 
-      selectInput("List", "Stock Label", 
+      selectInput("List", "Stock Label-1", 
+                  c("Apple - AAPL",
+                    "Bank of America - BAC",
+                    "CISCO - CSCO",
+                    "Citigroup - C",
+                    "Coca Cola - KO",
+                    "Facebook - FB",
+                    "General Electric - GE",
+                    "Tesla - TSLA",
+                    "Yahoo - YHOO",
+                    "McDonalds - MCD")),
+      selectInput("List2", "Stock Label-2", 
                   c("Apple - AAPL",
                     "Bank of America - BAC",
                     "CISCO - CSCO",
@@ -39,7 +50,12 @@ shinyUI(fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("Plot"),
-      textOutput("Confid")
+      textOutput("Confid1"),
+      textOutput("Confid2"),
+      plotOutput("Regression"),
+      textOutput("Means"),
+      tableOutput("RegressionSummary"),
+      textOutput("Rsquared")
     )
   )
 ))
